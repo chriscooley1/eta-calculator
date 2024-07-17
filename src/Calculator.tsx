@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 const Calculator: React.FC = () => {
-    const [distance, setDistance] = useState(0);
-    const [speed, setSpeed] = useState(0);
-    const [eta, setEta] = useState("");
+    const [distance, setDistance] = useState<number>();
+    const [speed, setSpeed] = useState<number>();
+    const [eta, setEta] = useState<string>();
 
     return (
         <>
@@ -11,22 +11,22 @@ const Calculator: React.FC = () => {
                 <div>
                     <label htmlFor="...">distance</label>
                     <input
-                        type="text"
+                        type="number"
                         id="distance"
                         value={distance}
                         placeholder="Enter distance here"
                         onChange={(event: React.ChangeEvent<HTMLInputElement>): void =>
-                            setDistance(event.target.value)}/>
+                            setDistance(parseFloat(event.target.value))}/>
                 </div>
                 <div>
                     <label htmlFor="...">speed</label>
                     <input
-                        type="text"
+                        type="number"
                         id="speed"
                         value={speed}
                         placeholder="Enter speed here"
                         onChange={(event: React.ChangeEvent<HTMLInputElement>): void =>
-                            setSpeed(event.target.value)}/>
+                            setSpeed(parseFloat(event.target.value))}/>
                 </div>
                 <div>
                     <label htmlFor="...">eta</label>
